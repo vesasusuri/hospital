@@ -8,13 +8,15 @@ use App\Models\Doctor;
 
 use App\Models\Appointment;
 
+use App\Models\News;
+
 class AdminController extends Controller
 {
     public function addview()
     {
         return view('admin.add_doctor');
     }
-
+    
     public function upload(Request $request){
         $doctor = new doctor;
 
@@ -115,4 +117,75 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Doctor Details Updates Successfully');
     }
+    
+    public function addnews()
+    {
+        return view('admin.add_news');
+    }
+
+    public function uploadnews(Request $request){
+        $news = new news;
+
+        $image = $request -> file;
+
+        $imagename = time().'.'.$image -> getClientoriginalExtension();
+
+        $request -> file -> move('newsimage' , $imagename);
+
+        $news -> image = $imagename;
+
+        $news -> description = $request -> description;
+
+        $news -> links = $request -> links;
+
+        $news -> save();
+
+        return redirect() -> back() -> with ('message', 'News Added Successfully');
+    }
+
+    public function shownews(){
+        $news = news::all();
+ 
+        return view('admin.show-news',compact('news'));
+    }
+
+    public function deletenews($id){
+        $news = news::find($id);
+
+        $news -> delete();
+
+        return redirect()->back();
+    }
+
+    public function updatenews($id){
+
+       $news = news::find($id);
+
+       return view('admin.update-news',compact('news'));
+    }
+
+    public function editnews(Request $request, $id){
+
+        $news = news::find($id);
+
+        $news -> description = $request -> description;
+
+        $news -> links = $request -> links;
+
+        $image = $request -> file;
+
+        if($image){
+
+            $imagename = time().'.'. $image -> getClientOriginalExtension();
+
+            $request ->file->move('newsimage', $imagename);
+
+            $news -> image = $imagename;
+        }
+        $news -> save();
+
+        return redirect()->back()->with('message', 'News Details Updates Successfully');
+    }
+    
+
 }

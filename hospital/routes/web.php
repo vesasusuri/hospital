@@ -37,10 +37,31 @@ Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
 
 Route::put('/editdoctor/{id}',[AdminController::class,'editdoctor']);
 
-Route::get('/aboutus',[HomeController::class,'aboutus']);
+Route::get('/add_news',[AdminController::class,'addnews']);
 
-Route::get('/doctor',[HomeController::class,'doctor']);
+Route::post('/upload_news',[AdminController::class,'uploadnews']);
+
+Route::get('/show-news',[AdminController::class,'shownews']);
+
+Route::get('/deletenews/{id}',[AdminController::class,'deletenews']);
+
+Route::get('/update-news/{id}',[AdminController::class,'updatenews']);
+
+Route::put('/editnews/{id}',[AdminController::class,'editnews']);
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/news',[HomeController::class,'news']);
 
 Route::get('/contact-us',[HomeController::class,'contactus']);
+
