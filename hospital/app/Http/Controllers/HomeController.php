@@ -42,6 +42,7 @@ class HomeController extends Controller
                 return view('user.news',compact('doctor'));
             }
             else{
+                return view('admin.home');
             } 
         }
 
