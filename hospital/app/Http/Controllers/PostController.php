@@ -21,4 +21,18 @@ class PostController extends Controller
         $post->save();
         return redirect('contact-us')->with('status', 'Your contact was sended to us we will return to you as soon as possible!');
     }
+
+    public function showContact()
+    {
+        $post = post::all();
+        return view('admin.show_contact_us',compact('post'));
+    }
+
+    public function deletepost($id){
+        $post = post::find($id);
+
+        $post -> delete();
+
+        return redirect()->back();
+    }
 }

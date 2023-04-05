@@ -8,6 +8,8 @@ use App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\PostController;
 
+use App\Http\Controllers\DonationController;
+
 
 Route::get('/home',[HomeController::class,'redirect']);
 
@@ -59,3 +61,13 @@ Route::get('/contact-us',[HomeController::class,'contactus']);
 Route::get('contact-us', [PostController::class, 'index']);
 
 Route::post('contact-us-form', [PostController::class, 'store']);
+
+Route::get('/show-contact-us',[PostController::class,'showContact']);
+
+Route::get('/deletepost/{id}',[PostController::class,'deletepost']);
+
+
+// Route::get( 'donation-form',  [ DonationController::class, 'donationForm' ] );
+// Route::get( 'donation/success',  [ DonationController::class, 'donationSuccess' ] )->name('donation.success');
+// Route::get( 'donation/cancelled',  [ DonationController::class, 'donationCancelled' ] )->name('donation.cancelled');
+// Route::get( 'donation/notify_url',  [ DonationController::class, 'donationNotify' ] )->name('donation.notify');
