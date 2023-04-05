@@ -11,6 +11,7 @@
     use App\Models\Doctor;
 
     use App\Models\Appointment;
+    use App\Models\News;
 
 class HomeController extends Controller
 {
@@ -69,7 +70,10 @@ class HomeController extends Controller
     }
 
     public function news(){
-        return view('user.news');
+
+        $news = News::all();
+
+        return view('user.news', compact('news'));
     }
 
     public function contactus(){

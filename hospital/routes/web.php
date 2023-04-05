@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\AdminController;
 
+use App\Http\Controllers\PostController;
+
 
 Route::get('/home',[HomeController::class,'redirect']);
 
@@ -49,19 +51,11 @@ Route::get('/update-news/{id}',[AdminController::class,'updatenews']);
 
 Route::put('/editnews/{id}',[AdminController::class,'editnews']);
 
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/news',[HomeController::class,'news']);
 
 Route::get('/contact-us',[HomeController::class,'contactus']);
 
+
+Route::get('contact-us', [PostController::class, 'index']);
+
+Route::post('contact-us-form', [PostController::class, 'store']);
