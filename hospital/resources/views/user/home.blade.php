@@ -37,6 +37,7 @@
     @include('user.doctors')
     @include('user.appointment')
     @include('user.script')
+    @include('user.footer')
 
 </body>
 

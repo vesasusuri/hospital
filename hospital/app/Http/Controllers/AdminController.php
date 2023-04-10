@@ -10,6 +10,7 @@ use App\Models\Appointment;
 
 use App\Models\News;
 
+
 class AdminController extends Controller
 {
     public function addview()
@@ -187,5 +188,4 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'News Details Updates Successfully');
     }
     
-
 }

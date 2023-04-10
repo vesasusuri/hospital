@@ -40,7 +40,7 @@ class HomeController extends Controller
             }
             else if(Auth::user()->usertype=='2'){
                 $doctor = doctor::all();
-                return view('user.news',compact('doctor'));
+                return view('user.home',compact('doctor'));
             }
             else{
                 return view('admin.home');
