@@ -66,6 +66,13 @@ Route::get('/show-contact-us',[PostController::class,'showContact']);
 
 Route::get('/deletepost/{id}',[PostController::class,'deletepost']);
 
+Route::get('/add-donations',[DonationController::class,'addDonation']);
+
+Route::post('/uploadDonations',[DonationController::class,'uploadDonations']);
+
+Route::get('/show-donations',[DonationController::class,'showDonations']);
+
+Route::get('/donate',[DonationController::class,'donate']);
 
 // Route::get( 'donation-form',  [ DonationController::class, 'donationForm' ] );
 // Route::get( 'donation/success',  [ DonationController::class, 'donationSuccess' ] )->name('donation.success');

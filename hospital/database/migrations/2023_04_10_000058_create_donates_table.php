@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('raisedMoney')->nullable();
             $table->string('goalMoney')->nullable();
             $table->string('donateMoney')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
