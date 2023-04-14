@@ -61,9 +61,15 @@ class DonationController extends Controller{
         return view('admin.show_donations',compact('donate'));
     }
 
+    public function processForm(Request $request)
+    {
+     $amount = $request->input('amount');
+    }
 
-
-
+    public function checkoutForm(Request $request)
+    {
+      return view('user.checkout-donate');
+    } 
 
 
 

@@ -74,6 +74,8 @@ Route::get('/show-donations',[DonationController::class,'showDonations']);
 
 Route::get('/donate',[DonationController::class,'donate']);
 
+Route::post('/checkout-form',[DonationController::class,'checkoutForm']);
+
 // Route::get( 'donation-form',  [ DonationController::class, 'donationForm' ] );
 // Route::get( 'donation/success',  [ DonationController::class, 'donationSuccess' ] )->name('donation.success');
 // Route::get( 'donation/cancelled',  [ DonationController::class, 'donationCancelled' ] )->name('donation.cancelled');
