@@ -24,18 +24,90 @@ use App\Http\Controllers\DonationController;
     </div> 
     
     <h1 class="text-success d-flex justify-content-center" style="font-size:25px;margin-top:40px">Welcome to our donation site. Where our hospital posts they're patients needs.</h1>
-
+<br><br>
     <div>
     @foreach ($donate as $donations)
-        <tr>
-            <td>{{ $donations->image }}</td>
-            <td>{{ $donations->heading }}</td>
-            <td>{{ $donations->autor }}</td>
-            <td>{{ $donations->description }}</td>
-            <td>{{ $donations->raisedMoney }}</td>
-            <td>{{ $donations->goalMoney }}</td>            
-        </tr>
+        <!-- <div class="d-flex justify-content-center " >
+            <div class="bg-secondary w-75 p-3 h-20 d-flex justify-content-around flex-wrap align-items-center">
+                <div>
+                    <td>
+                        <img src="donateimage/{{ $donations->image }} " alt="img" class="w-50 p-3">
+                    </td>
+                </div>
+                <div>
+                    <p class="text-light">{{ $donations->heading }}</p>
+                    <p class="text-light">{{ $donations->autor }}</p>
+                    <p class="text-light">{{ $donations->description }}</p>
+                    
+                    <div class="d-flex justify-content-around w-100">
+                        <p class="text-light">{{ $donations->raisedMoney }} raised of</p>
+                        <p class="text-light"> {{ $donations->goalMoney }} goal</p>  
+                    </div>
+                    <div class="progress">
+                         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                </div> 
+            </div>        
+            
+        </div> -->
+        <div class="d-flex justify-content-evenly flex-wrap align-items-center " >
 
+        <td>
+           <img src="donateimage/{{ $donations->image }} " alt="img" style="width:400px;">
+          </td>
+        <div class="grid-12 grid-md-6 grid-lg-12 js-result-p54436">
+       
+   <div class="grid-12 box_topMargin2Half box_md_horizontalPadded1 box_lg_horizontalPadded0 flex_growChildren ">
+  
+      <div class="grid-parent border_default col_white flex_grow1 ">
+         <div class="grid-12 grid-lg-8 grid-parent box_horizontalPadded2 box_md_horizontalPadded4 box_lg_horizontalPadded2 box_verticalPadded2Half text_fontSizeSmall layout_alignLeft">
+            <b>
+                <span class="col_ggSecondary1LightText box_bottomPadded0 layout_centerVertical" style="color:gray;font-size:14px;">
+                {{ $donations->subheading }}
+                </span>
+            </b>
+            <br>
+
+            <b>
+                <span class="col_ggSecondary1LightText box_bottomPadded0 layout_centerVertical" style="font-size:22px">
+                {{ $donations->heading }}
+                </span>
+            </b>
+            <div class="grid-12 box_verticalPaddedHalf">
+               by <a class="col_inherit" rel="nofollow" href="/donate/72574">{{ $donations->autor }}</a>
+            </div>
+            <br>
+            
+               <div class="grid-12 col_ggSecondary1Text box_verticalMargin2" style="width:700px">
+               {{ $donations->description }} <a href="">read&nbsp;more</a>
+               </div>
+               <br>
+               <div class="d-flex justify-content-between flex-wrap align-items-center grid-12 grid-parent layout_centerVertical">
+                    <div class="grid-12 grid-lg-7 box_rightPadded5 box_topPaddedHalf box_bottomPadded2">
+                        <span class="col_ggPrimary3DarkText text_fontSizeLarge text_7n">
+                         €{{ $donations->raisedMoney + $donations->donateMoney}}
+                        </span>
+                        raised of €{{ $donations->goalMoney }} goal
+                    </div>
+                <br>
+                  <form action="{{url('checkout-form')}}" method="post" class="grid-12 grid-lg-5 grid-parent layout_center box_topPaddedHalf" onsubmit="
+                  if (!$(this).find('input[name=amount]').val()) { $(this).find('input[name=amount]').val(25) } return gg.forms.validateIntegerBounded($(this).find('input[name=amount]')[0],'Donation amount',5)
+                  ">
+                     @csrf
+                     <div class="grid-4 grid-parent layout_centerVertical input_prefix text_fontSizeMedium">
+                        <span class="grid-3 layout_center">€</span>
+                        <input name="amount" type="number" style="width:100px;height:35px;" class="grid-9" oninput="gg.forms.autoValidate(this);">
+                        <button type="submit" class="btn btn-primary">Donate</button>
+                    </div>
+                  </form>
+               </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+
+        <br><br>
     @endforeach
     </div>
 
