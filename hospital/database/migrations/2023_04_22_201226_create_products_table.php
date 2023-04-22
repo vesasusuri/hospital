@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('raisedMoney')->nullable();
             $table->string('goalMoney')->nullable();
-            $table->string('photo');
+            $table->string('image');
             $table->decimal("price", 6, 2); 
             $table->timestamps();
         });

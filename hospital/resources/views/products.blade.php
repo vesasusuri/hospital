@@ -40,7 +40,7 @@
     @foreach ($products as $product)
         <div class="d-flex justify-content-evenly flex-wrap align-items-center " >
             <td>
-            <img src="asset('img') }}/{{ $product->photo }} " alt="img" style="width:400px;">
+            <img src="donateimage/{{$product->image}} " alt="img" style="width:400px;margin-left:-40px;">
             </td>
             <div class="grid-12 grid-md-6 grid-lg-12 js-result-p54436">
                 <div class="grid-12 box_topMargin2Half box_md_horizontalPadded1 box_lg_horizontalPadded0 flex_growChildren ">
@@ -69,7 +69,7 @@
                 <div class="d-flex justify-content-between flex-wrap align-items-center grid-12 grid-parent layout_centerVertical">
                     <div class="grid-12 grid-lg-7 box_rightPadded5 box_topPaddedHalf box_bottomPadded2">
                     <span class="col_ggPrimary3DarkText text_fontSizeLarge text_7n">
-                        €{{ $product->price }}
+                     We would appreciate if you donated   <span style="color:red;">€{{ $product->price }}</span>
                     </span>
                     <br><br>
                     <span class="col_ggPrimary3DarkText text_fontSizeLarge text_7n">

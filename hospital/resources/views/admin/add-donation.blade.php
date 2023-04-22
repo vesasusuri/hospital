@@ -54,6 +54,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <label>Price:</label>
+                    <input type="text" name="price" class="form-control" style="color:white" required>
+                </div>
+
+                <div class="mb-3">
                     <label>Raised Money:</label>
                     <input type="text" name="raisedMoney" class="form-control" style="color:white" required>
                 </div>
@@ -61,11 +66,6 @@
                 <div class="mb-3">
                     <label>Goal Money:</label>
                     <input type="text" name="goalMoney" class="form-control" style="color:white" required>
-                </div>
-
-                <div class="mb-3">
-                    <label>Donate Money:</label>
-                    <input type="text" name="donateMoney" class="form-control" style="color:white" required>
                 </div>
 
                 <div class="col-md-6">

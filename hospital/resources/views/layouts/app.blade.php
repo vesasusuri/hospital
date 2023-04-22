@@ -63,7 +63,7 @@
                                          Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                                     </button>
                                     
-                                    <div class="dropdown-menu" style="width:250px">
+                                    <div class="dropdown-menu" style="width:300px;padding:10px;">
                                         <div class="row total-header-section">
                                             @php $total = 0 @endphp
                                             @foreach((array) session('cart') as $id => $details)
@@ -77,7 +77,7 @@
                                             @foreach(session('cart') as $id => $details)
                                                 <div class="row cart-detail">
                                                     <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                                        <img src="{{ asset('img') }}/{{ $details['photo'] }}" />
+                                                        <img src="{{ asset('donateimage') }}/{{ $details['photo'] }}" style="width:100px;" />
                                                     </div>
                                                     <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                                                         <p>{{ $details['product_name'] }}</p>
@@ -86,6 +86,7 @@
                                                 </div>
                                             @endforeach
                                         @endif
+                                        <br>
                                         <div class="row">
                                             <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
                                                 <a href="{{ route('cart') }}" class="btn btn-primary btn-block">View all</a>
