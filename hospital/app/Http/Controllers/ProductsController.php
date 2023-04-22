@@ -28,7 +28,7 @@ class ProductsController extends Controller
         }  else {
             $cart[$id] = [
                 "product_name" => $product->product_name,
-                "photo" => $product->photo,
+                "photo" => $product->image,
                 "price" => $product->price,
                 "quantity" => 1
             ];
@@ -59,4 +59,5 @@ class ProductsController extends Controller
             session()->flash('success', 'Product successfully removed!');
         }
     }
+
 }
