@@ -27,29 +27,6 @@ use App\Http\Controllers\DonationController;
 <br><br>
     <div>
     @foreach ($donate as $donations)
-        <!-- <div class="d-flex justify-content-center " >
-            <div class="bg-secondary w-75 p-3 h-20 d-flex justify-content-around flex-wrap align-items-center">
-                <div>
-                    <td>
-                        <img src="donateimage/{{ $donations->image }} " alt="img" class="w-50 p-3">
-                    </td>
-                </div>
-                <div>
-                    <p class="text-light">{{ $donations->heading }}</p>
-                    <p class="text-light">{{ $donations->autor }}</p>
-                    <p class="text-light">{{ $donations->description }}</p>
-                    
-                    <div class="d-flex justify-content-around w-100">
-                        <p class="text-light">{{ $donations->raisedMoney }} raised of</p>
-                        <p class="text-light"> {{ $donations->goalMoney }} goal</p>  
-                    </div>
-                    <div class="progress">
-                         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                </div> 
-            </div>        
-            
-        </div> -->
         <div class="d-flex justify-content-evenly flex-wrap align-items-center " >
 
         <td>

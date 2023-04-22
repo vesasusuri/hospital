@@ -10,6 +10,10 @@ use App\Http\Controllers\PostController;
 
 use App\Http\Controllers\DonationController;
 
+use App\Http\Controllers\ProductsController;
+
+use App\Http\Controllers\PayPalController;
+
 
 
 Route::get('/home',[HomeController::class,'redirect']);
@@ -73,6 +77,26 @@ Route::post('/uploadDonations',[DonationController::class,'uploadDonations']);
 
 Route::get('/show-donations',[DonationController::class,'showDonations']);
 
-Route::get('/donate',[DonationController::class,'donate']);
+Route::get('/donate',[ProductsController::class,'index']);
 
 Route::post('/checkout-form',[DonationController::class,'checkoutForm']);
+
+
+Route::get('cart', [ProductsController::class, 'cart'])->name('cart');
+
+Route::get('add-to-cart/{id}', [ProductsController::class, 'addToCart'])->name('add_to_cart');
+
+Route::patch('update-cart', [ProductsController::class, 'update'])->name('update_cart');
+
+Route::delete('remove-from-cart', [ProductsController::class, 'remove'])->name('remove_from_cart');
+
+
+
+
+Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
+
+Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+
+Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+
+Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
