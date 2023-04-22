@@ -11,6 +11,7 @@
     use App\Models\Doctor;
 
     use App\Models\Appointment;
+    
     use App\Models\News;
 
 class HomeController extends Controller

@@ -13,7 +13,7 @@
     <div class="back-to-top"></div>
     <div class="page-section">
     <div class="container">
-    <div class="card-body" style="margin-top:-50px">
+    <div class="card-body" style="margin-top:-80px">
             @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif  
@@ -33,9 +33,11 @@
                         <td>{{ $appoints->message }}</td>
                         <td>{{ $appoints->status }}</td>
 
-                        <td><a href="{{url('cancel_appoint', $appoints->id)}}" onclick="return cofirm('are u sure to delete this')" class="bt btn-danger" style="padding:10px 20px; border-radius:13px;">Cancel</a></td>
+                        <td><a href="{{url('cancel_appoint', $appoints->id)}}" onclick="return cofirm('are u sure to delete this')" class="bt btn-danger" style="padding:4px 20px; border-radius:3px;">Cancel</a></td>
                     </tr>
                 @endforeach
+
+                <br>
             </table>
         </div>
         </div>

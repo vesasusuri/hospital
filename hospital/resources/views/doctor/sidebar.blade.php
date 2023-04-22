@@ -40,7 +40,7 @@
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('showappointment')}}">
+            <a class="nav-link" href="{{url('')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
@@ -49,11 +49,20 @@
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('docVisits')}}">
+            <a class="nav-link" href="{{url('show-user-visits')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">Doctor Visits</span>
+              <span class="menu-title">Show Pacients Visits</span>
+            </a>
+          </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('add_user_visits')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Add Pacients Visits</span>
             </a>
           </li>
         </ul>

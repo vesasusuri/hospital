@@ -14,23 +14,34 @@ use App\Http\Controllers\ProductsController;
 
 use App\Http\Controllers\PayPalController;
 
-
-
-Route::get('/home',[HomeController::class,'redirect']);
+use App\Http\Controllers\DoctorController;
 
 Auth::routes();
 
+
+// Home Controller Routes
+
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/add_doctor_view',[AdminController::class,'addview']);
+Route::get('/home',[HomeController::class,'redirect']);
 
-Route::post('/upload_doctor',[AdminController::class,'upload']);
+Route::get('/news',[HomeController::class,'news']);
+
+Route::get('/contact-us',[HomeController::class,'contactus']);
 
 Route::post('/appointment',[HomeController::class,'appointment']);
 
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
+
+
+
+// Admin Controller Routes 
+
+Route::get('/add_doctor_view',[AdminController::class,'addview']);
+
+Route::post('/upload_doctor',[AdminController::class,'upload']);
 
 Route::get('/showappointment',[AdminController::class,'showappointment']);
 
@@ -58,10 +69,11 @@ Route::get('/update-news/{id}',[AdminController::class,'updatenews']);
 
 Route::put('/editnews/{id}',[AdminController::class,'editnews']);
 
-Route::get('/news',[HomeController::class,'news']);
+// End Admin Controller
 
-Route::get('/contact-us',[HomeController::class,'contactus']);
 
+
+// Contact Us Form Routes
 
 Route::get('contact-us', [PostController::class, 'index']);
 
@@ -70,6 +82,10 @@ Route::post('contact-us-form', [PostController::class, 'store']);
 Route::get('/show-contact-us',[PostController::class,'showContact']);
 
 Route::get('/deletepost/{id}',[PostController::class,'deletepost']);
+
+
+
+// Donation Controller and View
 
 Route::get('/add-donations',[DonationController::class,'addDonation']);
 
@@ -82,6 +98,42 @@ Route::get('/donate',[ProductsController::class,'index']);
 Route::post('/checkout-form',[DonationController::class,'checkoutForm']);
 
 
+
+// Doctor View Dashboard
+Route::get('/add_user_visits',[DoctorController::class,'adduserdata']);
+
+Route::post('/upload_user_visits',[DoctorController::class,'uploadUserData']);
+
+Route::get('/show-user-visits',[DoctorController::class,'showVisits']);
+
+Route::get('/deleteUserVisits/{id}',[DoctorController::class,'deleteUserVisits']);
+
+Route::get('/updateUserVisits/{id}',[DoctorController::class,'updateUserVisits']);
+
+Route::put('/editUserVisits/{id}',[DoctorController::class,'editUserVisits']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Add Donation To Cart
+
 Route::get('cart', [ProductsController::class, 'cart'])->name('cart');
 
 Route::get('add-to-cart/{id}', [ProductsController::class, 'addToCart'])->name('add_to_cart');
@@ -92,6 +144,7 @@ Route::delete('remove-from-cart', [ProductsController::class, 'remove'])->name('
 
 
 
+// PayPal Routes for transactions
 
 Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
 
