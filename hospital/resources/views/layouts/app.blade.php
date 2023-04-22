@@ -55,7 +55,7 @@
                                 <a class="nav-link" href="{{url('contact-us')}}"style="font-size:18px">Contact</a>
                             </li>
                             <li class="nav-item">
-                                    <a class="nav-link"  href="{{url('myappointment')}}" style="font-size:18px">My appointments</a>
+                                    <a class="nav-link"  href="{{url('myappointment')}}" style="font-size:18px">My Appointments</a>
                             </li>
                             <li class="nav-item">
                                 <div class="dropdown">
