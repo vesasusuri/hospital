@@ -62,9 +62,9 @@ use App\Http\Controllers\DonationController;
                <div class="d-flex justify-content-between flex-wrap align-items-center grid-12 grid-parent layout_centerVertical">
                     <div class="grid-12 grid-lg-7 box_rightPadded5 box_topPaddedHalf box_bottomPadded2">
                         <span class="col_ggPrimary3DarkText text_fontSizeLarge text_7n">
-                         €{{ $donations->raisedMoney + $donations->donateMoney}}
+                         ${{ $donations->raisedMoney + $donations->donateMoney}}
                         </span>
-                        raised of €{{ $donations->goalMoney }} goal
+                        raised of ${{ $donations->goalMoney }} goal
                     </div>
                 <br>
                   <form action="{{url('checkout-form')}}" method="post" class="grid-12 grid-lg-5 grid-parent layout_center box_topPaddedHalf" onsubmit="

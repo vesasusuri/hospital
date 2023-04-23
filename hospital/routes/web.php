@@ -112,8 +112,10 @@ Route::get('/updateUserVisits/{id}',[DoctorController::class,'updateUserVisits']
 
 Route::put('/editUserVisits/{id}',[DoctorController::class,'editUserVisits']);
 
+Route::get('/appoints',[DoctorController::class,'appoints']);
 
 
+Route::get('/doctorVisits',[DoctorController::class,'showUserVisit']);
 
 
 
