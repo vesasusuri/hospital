@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 use App\Models\Visits;
+
+use App\Models\Appointment;
 
 class DoctorController extends Controller
 {
@@ -32,6 +36,10 @@ class DoctorController extends Controller
 
         $visits -> save();
 
+        if(Auth::id()){
+            $visits -> email = Auth::user() -> id;
+        }
+
         return redirect() -> back() -> with ('message', 'User Visits Added Successfully');
     }
 
@@ -56,26 +64,47 @@ class DoctorController extends Controller
        return view('doctor.update-visits',compact('visits'));
     }
 
-    public function editUserVisits(Request $request, $id){
+    public function appoints(){
 
-        $visits = visits::find($id);
+        $data = appointment::all();
 
-        $visits -> fullName = $request -> fullName;
+        return view('doctor.appoints', compact('data'));
+    }
 
-        $visits -> gender = $request -> gender;
+    public function approved($id){
+        $data = appointment::find($id);
 
-        $visits -> birthday = $request -> birthday;
+        $data -> status = 'Approved';
 
-        $visits -> email = $request -> email;
+        $data -> save();
 
-        $visits -> visited = $request -> visited;
+        return redirect() -> back();
 
-        $visits -> dateVisited = $request -> dateVisited;
+    }
 
-        $visits -> medicine = $request -> medicine;
+    public function canceled($id){
+        $data = appointment::find($id);
 
-        $visits -> save();
+        $data -> status = 'Canceled';
 
-        return redirect()->back()->with('message', 'News Details Updates Successfully');
+        $data -> save();
+
+        return redirect() -> back();
+
+    }
+
+    public function showUserVisit(){
+        if(Auth::id()){
+
+            $userid=Auth::user()->email;
+
+            $visits = visits :: where('email',$userid)->get();
+
+            return view('user.docVisits' , compact('visits'));
+        }
+
+        else {
+            return redirect()-> back();
+        }
     }
 }

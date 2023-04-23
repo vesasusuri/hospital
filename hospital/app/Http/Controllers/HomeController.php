@@ -14,6 +14,8 @@
     
     use App\Models\News;
 
+    use App\Models\Visits;
+
 class HomeController extends Controller
 {
     /**
@@ -131,4 +133,6 @@ class HomeController extends Controller
 
         return redirect()->back();
     }
+
+
 }

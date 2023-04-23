@@ -48,6 +48,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('donate')}}" style="font-size:18px">Donate</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('doctorVisits')}}" style="font-size:18px">Doctor Visits</a>
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('news')}}"style="font-size:18px">News</a>
                             </li>
