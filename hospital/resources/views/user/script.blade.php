@@ -7,3 +7,5 @@
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
 <script src="../assets/js/theme.js"></script>
+
+<script src='//fw-cdn.com/7036183/3245886.js' chat='true'></script>

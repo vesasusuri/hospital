@@ -5,6 +5,8 @@ use App\Http\Controllers\DonationController;
 <html lang="en">
 <head>
     @include('user.links')
+    @include('user.script')
+
 </head>
 <body>
     @include('layouts.app')
