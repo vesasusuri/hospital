@@ -46,6 +46,6 @@
 
       <hr>
 
-      <p id="copyright">Copyright &copy; 2020 <a href="" target="_blank">Vesa Susuri</a>. All right reserved</p>
+      <p id="copyright">Copyright &copy; 2023 <a href="" target="_blank">Vesa Susuri</a>. All right reserved</p>
     </div>
   </footer>

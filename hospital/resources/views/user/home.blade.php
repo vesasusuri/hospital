@@ -35,6 +35,7 @@
     <button type="button" class="close" data-dismiss="alert"> x </button>
     {{session()->get('message')}}
 </div>
+
 @endif
 
     @include('user.appointment')

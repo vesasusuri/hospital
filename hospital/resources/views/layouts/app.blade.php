@@ -18,14 +18,11 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                  <img src="../assets/img/logos/2.png" style= "width:200px;height:100px" alt="">
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto"></ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                <div class="collapse navbar-collapse" id="navbarSupport">                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -45,22 +42,22 @@
                             <li class="nav-item active" >
                                 <a class="nav-link" href="{{url('home')}}" style="font-size:18px">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="{{url('donate')}}" style="font-size:18px">Donate</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="{{url('doctorVisits')}}" style="font-size:18px">Doctor Visits</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="{{url('news')}}"style="font-size:18px">News</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active" >
                                 <a class="nav-link" href="{{url('contact-us')}}"style="font-size:18px">Contact</a>
                             </li>
-                            <li class="nav-item">
-                                    <a class="nav-link"  href="{{url('myappointment')}}" style="font-size:18px">My Appointments</a>
+                            <li class="nav-item active">
+                                <a class="nav-link"  href="{{url('myappointment')}}" style="font-size:18px">My Appointments</a>
                             </li>
                             <li class="nav-item">
                                 <div class="dropdown">
