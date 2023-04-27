@@ -52,7 +52,7 @@ class DonationController extends Controller{
 
     public function showDonations()
     {
-        $donate = donate::all();
+        $donate = product::all();
         return view('admin.show_donations',compact('donate'));
     }
 

@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
   @include("doctor.style")
-
+<style>
+    body{
+        overflox-x:scroll;
+    }
+</style>
   </head>
   <body>
     <div class="container-scroller">
