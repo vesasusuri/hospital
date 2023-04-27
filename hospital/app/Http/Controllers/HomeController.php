@@ -84,7 +84,29 @@ class HomeController extends Controller
     public function contactus(){
         return view('user.contact-us');
     }
-  
+
+    public function editAppoints(Request $request, $id){
+
+        $data = appointment::find($id);
+
+        $data -> date = $request -> date;
+
+        $data -> message = $request -> message;
+
+        $data -> doctor = $request -> doctor;
+
+        $data -> save();
+
+        return redirect()->back()->with('message', 'Appointment Details Updates Successfully');
+    }
+
+    public function updateAppointss($id){
+
+        $data = appointment::find($id);
+
+        return view('user.update-appoints',compact('data'));
+     }
+
     public function appointment(Request $request){
         $data = new appointment;
 

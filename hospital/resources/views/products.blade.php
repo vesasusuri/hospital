@@ -57,7 +57,7 @@
                     </span>
                     <br><br>
                     <span class="col_ggPrimary3DarkText text_fontSizeLarge text_7n">
-                        €{{ $product->raisedMoney + $product->price }}
+                        €{{ $product->raisedMoney }}
                     </span>
                         raised of €{{ $product->goalMoney }} goal
                     </div>

@@ -23,6 +23,7 @@
                     <th>Date</th>
                     <th>Message</th>
                     <th>Status</th>
+                    <th>Update Appointment</th>
                     <th>Cancel Appointment</th>
                 </tr>
            
@@ -32,8 +33,10 @@
                         <td>{{ $appoints->date }}</td>
                         <td>{{ $appoints->message }}</td>
                         <td>{{ $appoints->status }}</td>
-
-                        <td><a href="{{url('cancel_appoint', $appoints->id)}}" onclick="return cofirm('are u sure to delete this')" class="bt btn-danger" style="padding:4px 20px; border-radius:3px;">Cancel</a></td>
+                        <td>
+                            <a  href="{{ url('update-appointments', $appoints->id) }}" class="btn btn-success">Update</a>
+                        </td>
+                        <td><a href="{{url('cancel_appoint', $appoints->id)}}" onclick="return cofirm('are u sure to delete this')" class="btn btn-danger">Cancel</a></td>
                     </tr>
                 @endforeach
 
