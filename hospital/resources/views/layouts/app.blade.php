@@ -21,11 +21,18 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupport">                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                
+                <div class="collapse navbar-collapse" id="navbarSupport"> 
+                <ul class="navbar-nav me-auto">
+                    
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                           <div style="margin-left:900px; display:flex;">
+                           @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link text-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -36,8 +43,8 @@
                                     <a class="nav-link btn btn-info text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+                           </div>
                         @else
-                        
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active" >
                                 <a class="nav-link" href="{{url('home')}}" style="font-size:18px">Home</a>
@@ -95,11 +102,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-
-                                
-                            </ul>
-                        
+                                </li>     
+                            </ul>                   
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

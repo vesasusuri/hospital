@@ -35,7 +35,10 @@ Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
 
-
+Route::get('/download-file', function () {
+    $filePath = storage_path('app/public/example.pdf');
+    return response()->download($filePath);
+});
 
 // Admin Controller Routes 
 
