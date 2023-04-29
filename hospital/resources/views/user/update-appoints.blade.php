@@ -10,7 +10,7 @@
         <div class="container-fluid px-4">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="mt-4">Edit Posts</h4>
+                    <h4 class="mt-4">Edit Appointment</h4>
                 </div>
 
                 <div class="card-body">
