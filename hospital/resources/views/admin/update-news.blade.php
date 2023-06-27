@@ -16,20 +16,17 @@
         </div>
         <div class="card-body">
           
-        @if(session()->has('message'))
-          <div class="alert alert-success">
-              <button type="button" class="close" data-dismiss="alert"> x </button>
-              {{session()->get('message')}}
-          </div>
-        @endif
-        
-            @if ($errors->any())
+        @if ($errors->any())
                 <div class="alert alert-danger">
                     @foreach ($errors->all() as $error)
                         <div>{{$error}}</div>
                     @endforeach
                 </div>  
             @endif
+
+            @if (session('message'))
+                <div class="alert alert-success">{{ session('message') }}</div>
+            @endif  
             <form action="{{ url('editnews', $news->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -54,7 +51,7 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <button type="submit" class="btn btn-success">Update Doctors</button>
+                    <button type="submit" class="btn btn-success">Update News</button>
                 </div>
             </form>
         </div>
